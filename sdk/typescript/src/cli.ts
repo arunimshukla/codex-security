@@ -7330,7 +7330,8 @@ async function runFindingPatches(
             "No complete patch result was returned for this finding.",
           );
         } else if (
-          parsed.data.status === "verified" &&
+          (parsed.data.status === "verified" ||
+            parsed.data.status === "no_change") &&
           !parsed.data.verification?.trim()
         ) {
           patch = failed(
