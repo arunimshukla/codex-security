@@ -7493,7 +7493,7 @@ async function runSkill(
           ...(options.findings === undefined
             ? []
             : [
-                'Return exactly one JSON object with a "patches" array. Include one object for every supplied finding: {"occurrenceId":"...","status":"verified|no_change|blocked|failed","files":["relative/path"],"verification":"proof that the original issue is fixed and legitimate behavior still works","reason":"required for blocked or failed outcomes"}. Use "verified" only after the original issue no longer reproduces and relevant checks pass. Preserve unrelated local changes.',
+                'Return exactly one JSON object with a "patches" array. Include one object for every supplied finding: {"occurrenceId":"...","status":"verified|no_change|blocked|failed","files":["relative/path"],"verification":"required for verified and no_change outcomes: proof that the original issue is fixed or that the current code is already safe, and that legitimate behavior still workss","reason":"required for blocked or failed outcomes"}. Use "verified" only after the original issue no longer reproduces and relevant checks pass. Preserve unrelated local changes.',
               ]),
         ]),
     ...(options.findingInstructions === undefined
